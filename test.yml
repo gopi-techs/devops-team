@@ -1,0 +1,19 @@
+---
+- name: This is a test playbook 
+  hosts: All
+  become: true
+  tasks:
+    - name: Test task 1
+      service: 
+        name: httpd
+        state: active
+
+    - name: Its nice to code
+      service:
+        name: java
+        state: active
+
+    - name: check installed services
+      yum:
+        name: java
+        state: latest
